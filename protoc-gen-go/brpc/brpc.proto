@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package brpc;
+
+import "github.com/golang/protobuf/protoc-gen-go/descriptor/descriptor.proto";
+
+extend google.protobuf.MethodOptions {
+    optional int32 CmdID = 2000000;
+    optional string Method = 2000003;
+    optional string Path = 2000004;
+}
+
+message SysError {
+    optional int32 errcode = 1;
+    optional string errmsg = 2;
+}
